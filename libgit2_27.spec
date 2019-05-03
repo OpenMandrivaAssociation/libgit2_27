@@ -23,6 +23,7 @@ Git core methods provided as a re-entrant linkable library
 This is an old version of libgit2, provided for compatibility
 with legacy applications only.
 
+%if "%{libname}" != "%{name}"
 %package -n %{libname}
 Summary: Old version of libgit2
 Group: System/Libraries
@@ -32,6 +33,7 @@ Git core methods provided as a re-entrant linkable library
 
 This is an old version of libgit2, provided for compatibility
 with legacy applications only.
+%endif
 
 %prep
 %setup -n libgit2-%{version}
@@ -49,6 +51,10 @@ rm -rf	%{buildroot}%{_includedir} \
 	%{buildroot}%{_libdir}/*.so \
 	%{buildroot}%{_libdir}/pkgconfig
 
+%if "%{libname}" != "%{name}"
 %files -n %{libname}
+%else
+%files
+%endif
 %{_libdir}/*.so.%{major}*
 %{_libdir}/*.so.0*

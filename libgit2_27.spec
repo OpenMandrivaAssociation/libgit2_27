@@ -6,7 +6,7 @@ Version: 0.27.8
 Release: 2
 Source0: https://github.com/libgit2/libgit2/archive/v%{version}/libgit2-%{version}.tar.gz
 Summary: Old version of the libgit library
-URL: http://libgit2.github.com
+URL: https://libgit2.github.com
 License: GPLv2 with linking exception
 Group: System/Libraries
 BuildRequires: cmake
